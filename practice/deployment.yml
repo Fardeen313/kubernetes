@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-container
-        image: fardeenattar/tomcat
+        image: 545009838510.dkr.ecr.us-east-1.amazonaws.com/tomcat
         ports:
         - containerPort: 8080
 ---
