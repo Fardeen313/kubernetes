@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: fardeenattar/backend-rds:latest
+        ports:
+        - containerPort: 80
+        env:
+          - name: DB_HOST
+            value: "database-1.c70egwocqt0h.us-east-1.rds.amazonaws.com"
+          - name: DB_USERNAME
+            value: "admin"
+          - name: DB_PASSWORD
+            value: "8888313545"
+          - name: DB_PORT
+            value: "3306"
+          - name: DB_NAME
+            value: "test"
